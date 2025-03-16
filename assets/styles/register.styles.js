@@ -92,6 +92,16 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     fontWeight: "600",
   },
+  errorText: {
+    color: "red",
+    fontSize: 14,
+    marginTop: 5,
+    marginLeft: 5,
+  },
+  inputErrorBorder: {
+    borderColor: "red",
+    borderWidth: 1.5,
+  },
 });
 
 export default styles;
