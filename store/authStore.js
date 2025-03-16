@@ -34,7 +34,7 @@ export const useAuthStore = create((set, get) => ({
 
     try {
       const response = await fetch(
-        "http://192.168.1.5:8000/api/v1/auth/register",
+        "http://192.168.1.4:8000/api/v1/auth/register",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -73,7 +73,7 @@ export const useAuthStore = create((set, get) => ({
 
     try {
       const response = await fetch(
-        "http://192.168.1.5:8000/api/v1/auth/login",
+        "http://192.168.1.4:8000/api/v1/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
