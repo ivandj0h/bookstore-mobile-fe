@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
@@ -6,6 +7,9 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome {name}</Text>
+
+      <Link href="/(auth)/register">Register</Link>
+      <Link href="/(auth)">Login</Link>
     </View>
   );
 }
