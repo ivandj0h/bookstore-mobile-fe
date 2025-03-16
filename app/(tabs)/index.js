@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, Alert, StyleSheet } from "react-native";
 import { useAuthStore } from "../../store/authStore";
 import { useRouter } from "expo-router";
 
-export default function Dashboard() {
+export default function Home() {
   const { user, logout } = useAuthStore();
   const router = useRouter();
 

@@ -6,6 +6,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Alert,
+  Image,
   ActivityIndicator,
 } from "react-native";
 import styles from "../../assets/styles/login.styles";
@@ -39,10 +40,11 @@ export default function Login() {
     const result = await login(values.email, values.password);
 
     if (result.success) {
-      resetForm(); // ✅ Kosongin input setelah sukses login!
-      router.replace("/(home)/dashboard"); // ✅ Arahkan ke Dashboard setelah login sukses
+      resetForm();
+      router.replace("/(tabs)/dashboard");
     } else {
       Alert.alert("Login Gagal", result.error);
+      resetForm();
     }
 
     setSubmitting(false);
@@ -54,6 +56,14 @@ export default function Login() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <View style={styles.container}>
+        <View style={styles.topIllustration}>
+          {/* ✅ Balikin Gambar Supaya Muncul Lagi! */}
+          <Image
+            source={require("../../assets/images/i.png")}
+            style={styles.illustrationImage}
+            contentFit="contain"
+          />
+        </View>
         <Formik
           initialValues={{ email: "", password: "" }}
           validationSchema={loginSchema}
@@ -67,7 +77,6 @@ export default function Login() {
             errors,
             touched,
             isSubmitting,
-            resetForm,
           }) => (
             <View style={styles.card}>
               <View style={styles.formContainer}>

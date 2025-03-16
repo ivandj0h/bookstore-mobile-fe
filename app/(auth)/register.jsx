@@ -50,10 +50,11 @@ export default function Register() {
         "Registrasi Berhasil",
         "Silakan login untuk mendapatkan akses."
       );
-      resetForm(); // ✅ Kosongin input setelah sukses
+      resetForm();
       router.push("/(auth)"); // ✅ Arahkan ke halaman login setelah sukses
     } else {
       Alert.alert("Registrasi Gagal", result.error);
+      resetForm();
     }
 
     setSubmitting(false);
